@@ -1,8 +1,10 @@
 import PIL.Image
+import colors
 
 class Image:
     def __init__(self, image):
         self.image = PIL.Image.open(image)
+        self.image = self.image.resize((800, 600))
         self.image_rgb = self.image.convert('RGB')
 
     def get_size(self):
@@ -15,14 +17,15 @@ class Image:
             current_row = self.grid.append([])
             for column in range(1, self.width):
                 self.grid[row-1].append(self.image_rgb.getpixel((column, row)))
-            print(self.grid[row-1])
+                self.rgb_value = self.image_rgb.getpixel((column, row))
+                self.color = c.check_color(self.rgb_value)
+                print(self.color)
+
 
 
 
 if __name__ == '__main__':
     IMAGE = 'test-image.jpg'
     RGB = Image(IMAGE)
+    c = colors.MyClass()
     RGB.generate_grid()
-    image = PIL.Image.open(IMAGE)
-    new_image = image.resize((500, 500))
-    new_image.show()
