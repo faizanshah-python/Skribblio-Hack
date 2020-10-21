@@ -2,13 +2,13 @@ from math import sqrt
 
 class MyClass:
     def __init__(self):
-        self.colors = ( (255, 0, 0), #RED
+        self.colors = (
+            (255, 0, 0), #RED
             (0, 255, 0,), #GREEN
             (0, 0, 255,), #BLUE 2
             (0, 0, 0,), #BLACK
             (255, 255, 255,), #WHITE
             (211, 211, 211,), #GREY
-            (128, 128, 128,), #DARK GREY
             (128, 0, 0,), #DARK RED
             (255, 165, 0,), #ORANGE
             (255, 140, 0,), #DARK ORANGE
@@ -19,7 +19,11 @@ class MyClass:
             (0, 191, 255,), #BLUE 1
             (70, 130, 180,), #DARK BLUE 1
             (0, 0, 128,), #DARK BLUE 2
-            ) 
+            (128, 0, 128,), #PINK 1
+            (255, 192, 203,), #PINK 2
+            (160, 82, 45,), #BROWN
+            (139, 69, 19,), #DARK BROWN
+            )
 
 
 
