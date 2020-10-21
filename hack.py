@@ -1,5 +1,6 @@
 import PIL.Image
 import colors
+import drawing
 import matplotlib.pyplot as plt
 
 class Image:
@@ -12,20 +13,19 @@ class Image:
         return self.image.size
 
     def generate_grid(self):
-        self.grid = []
         self.width, self.height = self.get_size()
         for row in range(1, self.height):
-            current_row = self.grid.append([])
             for column in range(1, self.width):
-                self.grid[row-1].append(C.check_color(self.image_rgb.getpixel((column, row))))
-        plt.imshow(self.grid)
-        plt.show()
+                self.simplified = C.check_color(self.image_rgb.getpixel((column, row)))
+                D.draw_pixel(column, row, self.simplified)
 
 
 
 
 if __name__ == '__main__':
     IMAGE = 'test-image.jpg'
+    GAME_CODE = '8w7uC49AuzIv'
     RGB = Image(IMAGE)
-    C = colors.MyClass()
+    D = drawing.Drawing(GAME_CODE)
+    C = colors.Colours()
     RGB.generate_grid()

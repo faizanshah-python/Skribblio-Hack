@@ -1,10 +1,9 @@
 from math import sqrt
 
-class MyClass:
+class Colours:
     def __init__(self):
         self.colors = (
-            (255, 0, 0), #RED
-            (0, 255, 0,), #GREEN
+            (255, 0, 0,), #RED
             (0, 0, 255,), #BLUE 2
             (0, 0, 0,), #BLACK
             (255, 255, 255,), #WHITE
